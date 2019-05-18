@@ -8,7 +8,7 @@ This is part of a suite of applications that can be used if you have a dump1090 
 
 # Container Requirements
 
-This is a multi architecture build that supports arm (armhf/arm64) (no amd64 att due to no repo!)
+This is a multi architecture build that supports arm (armhf) (no amd64 or arm64 att due to no repo!)
 
 You must first have a running setup for before using this container as it will not help you on initial setup
 
