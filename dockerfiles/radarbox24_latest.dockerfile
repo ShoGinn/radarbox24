@@ -7,7 +7,8 @@ RUN apt-get update \
 	libcurl3-gnutls \
 	libglib2.0-0 \
 	libc6 \
-	netbase && \
+	netbase \
+	python3 && \
 	apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
