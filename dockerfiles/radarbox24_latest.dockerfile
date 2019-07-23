@@ -33,4 +33,6 @@ COPY rootfs /
 
 COPY --from=builder /usr/bin/rbfeeder /usr/bin/rbfeeder
 
+COPY --from=shoginn/adsbexchange-mlat:latest /usr/bin/mlat-client /usr/bin/mlat-client
+
 ENTRYPOINT ["/usr/local/bin/docker_entrypoint.sh"]
