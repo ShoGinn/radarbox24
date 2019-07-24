@@ -18,7 +18,7 @@ echo -n "" > ${RBFEEDER_INI}
 } >> ${RBFEEDER_INI}
 
 ini_val ${RBFEEDER_INI} client.lat ${MLAT_CLIENT_LATITUDE:-0}
-ini_val ${RBFEEDER_INI} client.long ${MLAT_CLIENT_LONGITUDE:-0}
+ini_val ${RBFEEDER_INI} client.lon ${MLAT_CLIENT_LONGITUDE:-0}
 ini_val ${RBFEEDER_INI} client.alt ${MLAT_CLIENT_ALTITUDE:-0}
 ini_val ${RBFEEDER_INI} mlat.autostart_mlat true
 
