@@ -33,5 +33,6 @@ FROM base
 COPY rootfs /
 
 COPY --from=builder /usr/bin/rbfeeder /usr/bin/rbfeeder
+COPY --from=builder /usr/bin/mlat-client /usr/bin/mlat-client
 
 ENTRYPOINT ["/usr/local/bin/docker_entrypoint.sh"]
