@@ -10,7 +10,7 @@ RBFEEDER_INI=/etc/rbfeeder.ini
 
 source ini_val.sh
 
-touch ${RBFEEDER_INI}
+echo -n "" > ${RBFEEDER_INI}
 {
   echo '[client]'
   echo '[mlat]'
@@ -20,7 +20,7 @@ touch ${RBFEEDER_INI}
 ini_val ${RBFEEDER_INI} client.lat ${MLAT_CLIENT_LATITUDE:-0}
 ini_val ${RBFEEDER_INI} client.long ${MLAT_CLIENT_LONGITUDE:-0}
 ini_val ${RBFEEDER_INI} client.alt ${MLAT_CLIENT_ALTITUDE:-0}
-ini_val ${RBFEEDER_INI} mlat autostart_mlat true
+ini_val ${RBFEEDER_INI} mlat.autostart_mlat true
 
 
 echo "Waiting for dump1090 to start up"
