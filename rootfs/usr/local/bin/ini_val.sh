@@ -30,7 +30,7 @@ function ini_val() {
   local file="${1:-}"
   local sectionkey="${2:-}"
   local val="${3:-}"
-  local delim=" = "
+  local delim="="
   local section=""
   local key=""
 
