@@ -34,5 +34,7 @@ COPY rootfs /
 COPY --from=builder /usr/bin/rbfeeder /usr/bin/rbfeeder
 COPY --from=builder /usr/bin/mlat-client /usr/bin/mlat-client
 COPY --from=builder /usr/lib/python3/dist-packages/mlat/ /usr/lib/python3/dist-packages/mlat/
+COPY --from=builder /usr/lib/python3/dist-packages/_modes.cpython-35m-arm-linux-gnueabihf.so \
+		    /usr/lib/python3/dist-packages/_modes.cpython-35m-arm-linux-gnueabihf.so
 
 ENTRYPOINT ["/usr/local/bin/docker_entrypoint.sh"]
