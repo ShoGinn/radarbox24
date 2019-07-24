@@ -8,7 +8,6 @@ RUN apt-get update \
 	libglib2.0-0 \
 	libc6 \
 	netbase \
-	python3 && \
 	apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
@@ -25,16 +24,12 @@ RUN DEBIAN_FRONTEND=noninteractive apt-key adv --keyserver ha.pool.sks-keyserver
 RUN echo 'deb https://apt.rb24.com/ rpi-stable main' > /etc/apt/sources.list.d/rb24.list
 RUN apt-get update -y && \
     DEBIAN_FRONTEND=noninteractive apt-get install -yq --no-install-recommends \
-    rbfeeder mlat-client
+    rbfeeder
 
 FROM base
 
 COPY rootfs /
 
 COPY --from=builder /usr/bin/rbfeeder /usr/bin/rbfeeder
-COPY --from=builder /usr/bin/mlat-client /usr/bin/mlat-client
-COPY --from=builder /usr/lib/python3/dist-packages/mlat/ /usr/lib/python3/dist-packages/mlat/
-COPY --from=builder /usr/lib/python3/dist-packages/_modes.cpython-35m-arm-linux-gnueabihf.so \
-		    /usr/lib/python3/dist-packages/_modes.cpython-35m-arm-linux-gnueabihf.so
 
 ENTRYPOINT ["/usr/local/bin/docker_entrypoint.sh"]
