@@ -16,6 +16,10 @@ You must first have a running setup for before using this container as it will n
 
 Env variables must be passed to the container containing the radarbox24 required items
 
+If you want to use mlat, please use my mlat container in addition!
+
+See https://github.com/ShoGinn/adsbexchange-mlat
+
 ### Defaults
 * DUMP1090_SERVER=dump1090 -- make sure your dump1090 container is named this and on the same network (hard coded cannot change)
 * DUMP1090_PORT=30005 -- default port (hard coded cannot change)
