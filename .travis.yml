@@ -47,7 +47,7 @@ before_script:
   - curl -ksSl -o ./travis/deploy.sh "https://raw.githubusercontent.com/ShoGinn/docker-builds/master/travis/deploy.sh"
 
 script:
-  - sudo bash travis/build.sh
+  - travis_retry sudo bash travis/build.sh
 
 deploy:
   provider: script
