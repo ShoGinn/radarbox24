@@ -1,16 +1,16 @@
 FROM debian:stretch-slim AS base
 
 RUN \
-	apt-get update \
-	&& apt-get install -y --no-install-recommends \
-		librtlsdr0 \
-		libusb-1.0-0 \
-		libcurl3-gnutls \
-		libglib2.0-0 \
-		libc6 \
-		netbase \
-	&& apt-get clean \
-	&& rm -rf /var/lib/apt/lists/*
+    apt-get update \
+    && apt-get install -y --no-install-recommends \
+    librtlsdr0 \
+    libusb-1.0-0 \
+    libcurl3-gnutls \
+    libglib2.0-0 \
+    libc6 \
+    netbase \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
 FROM --platform=$TARGETPLATFORM debian:stretch-slim as builder
 
